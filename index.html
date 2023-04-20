@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Top Infinity Cheese</title>
+        <style>
+            body * {
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
+
+            a {
+                color: rgb(0, 58, 113);
+                text-decoration: none;
+            }
+
+            video {
+                width: 80%;
+            }
+
+            .centered {
+                margin: auto;
+                width: 50%;
+            }
+
+            .bottom {
+                position: absolute;
+                bottom: 5%;
+                text-align: center;
+                width: 100%;
+            }
+
+            #button {
+                font-size: x-large;
+            }
+        </style>
+        <script>
+            function autoplayVideo() {
+                var video = document.getElementById("video");
+                var promise = video.play();
+
+                if (promise !== undefined) {
+                    promise.then(_ => {
+                        console.log("video autoplaying");
+                    }).catch(error => {
+                        document.getElementById("button").hidden = false;
+                    })
+                }
+            }
+
+            function playVideo() {
+                var video = document.getElementById("video");
+                video.play();
+                document.getElementById("button").hidden = true;
+            }
+        </script>
+    </head>
+    <body onload="autoplayVideo()">
+        <div class="centered">
+            <video id="video" autoplay>
+                <source src="top_infinity_cheese.webm" type="video/webm">
+            </video><br>
+            <button hidden onclick="playVideo()" id="button">Your browser blocked autoplay - click here</button>
+        </div>
+        <div class="bottom"><h1>find more cheese at <a href="https://perrymacmurray.com">perrymacmurray.com</a></h1></div>
+    </body>
+</html>
