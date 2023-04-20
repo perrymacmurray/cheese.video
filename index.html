@@ -13,13 +13,21 @@
                 text-decoration: none;
             }
 
-            video {
-                width: 80%;
+            @media (max-aspect-ratio: 1/1) { 
+                video {
+                    width: 100%;
+                }
+            }
+
+            @media (min-aspect-ratio: 1/1) { 
+                video {
+                    width: 50%;
+                }
             }
 
             .centered {
                 margin: auto;
-                width: 50%;
+                width: 100%;
             }
 
             .bottom {
