@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Top Infinity Cheese</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <style>
             body * {
                 font-family: Arial, Helvetica, sans-serif;
@@ -30,7 +31,7 @@
                 width: 100%;
             }
 
-            .bottom {
+            #bottom {
                 position: absolute;
                 bottom: 5%;
                 text-align: center;
@@ -41,6 +42,11 @@
                 font-size: x-large;
             }
         </style>
+        <script>
+            $(document).ready(function() {
+                $("#bottom").hide().delay(30000).fadeIn(2000);
+            });
+        </script>
         <script>
             function autoplayVideo() {
                 var video = document.getElementById("video");
@@ -79,6 +85,6 @@
             </video><br>
             <button hidden onclick="playVideo()" id="button">Your browser blocked autoplay - click here</button>
         </div>
-        <div class="bottom"><h1>find more cheese at <a href="https://perrymacmurray.com">perrymacmurray.com</a></h1></div>
+        <div id="bottom"><h1>find more cheese at <a href="https://perrymacmurray.com">perrymacmurray.com</a></h1></div>
     </body>
 </html>
